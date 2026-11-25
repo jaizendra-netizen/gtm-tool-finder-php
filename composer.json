@@ -1,0 +1,23 @@
+{
+    "name": "onegtmlab/gtm-tool-finder",
+    "description": "Search GTM tool API reviews, tool comparisons and GTM glossary terms from OneGTMLab, from PHP or your terminal.",
+    "type": "library",
+    "keywords": ["gtm", "sales tools", "revops", "lead enrichment", "tool comparison", "gtm engineering"],
+    "homepage": "https://www.onegtmlab.dev",
+    "license": "MIT",
+    "authors": [
+        {"name": "OneGTMLab", "email": "account@onegtmlab.dev", "homepage": "https://www.onegtmlab.dev"}
+    ],
+    "support": {
+        "docs": "https://www.onegtmlab.dev/tool-directory",
+        "source": "https://github.com/jaizendra-netizen/gtm-tool-finder-php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {"OneGTMLab\\GtmToolFinder\\": "src/"}
+    },
+    "bin": ["bin/gtm-tool-finder"]
+}

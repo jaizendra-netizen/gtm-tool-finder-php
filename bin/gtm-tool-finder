@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+foreach ([__DIR__ . '/../vendor/autoload.php', __DIR__ . '/../../../autoload.php', __DIR__ . '/../src/Finder.php'] as $f) {
+    if (file_exists($f)) {
+        require $f;
+        break;
+    }
+}
+
+use OneGTMLab\GtmToolFinder\Finder;
+
+$args = array_slice($argv, 1);
+$kind = null;
+if (count($args) >= 2 && $args[0] === '--kind') {
+    $kind = $args[1];
+    $args = array_slice($args, 2);
+}
+$results = Finder::search(implode(' ', $args), $kind);
+if (!$results) {
+    fwrite(STDERR, "No matches. Browse the full directory at https://www.onegtmlab.dev/tool-directory\n");
+    exit(1);
+}
+foreach ($results as $r) {
+    printf("%-10s %s\n           %s\n", $r['kind'], $r['name'], $r['url']);
+}
