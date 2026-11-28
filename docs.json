@@ -1,0 +1,10 @@
+{
+  "name": "gtm-tool-finder (PHP)",
+  "description": "Search the OneGTMLab GTM tool directory from PHP or the terminal",
+  "sidebar": [
+    {
+      "title": "Overview",
+      "href": "/"
+    }
+  ]
+}
